@@ -9,7 +9,7 @@ pipeline {
     
     environment {
         
-        server='server'
+        server = '$server'
         nexus_password='J3nkins'
     }
 
