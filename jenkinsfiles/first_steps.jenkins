@@ -3,7 +3,7 @@
 environment {
         
         server = '$server'
-        nexus_password='J3nkins'
+        nexus_password='$nexus_password'
     }
 properties([disableConcurrentBuilds()])
 
