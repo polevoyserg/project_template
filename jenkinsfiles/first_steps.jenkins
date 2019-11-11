@@ -26,12 +26,20 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'echo $server ; echo $username; echo $build_directory ; echo $git_name; echo $git_email; echo $hostname  ' 
+                sh ' {
+  echo '$server'
+  echo '$username'
+  echo '$build_directory'
+  echo '$git_name'  
+  echo '$git_email'
+  echo '$hostname'
+                    
+} > file.txt        
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh root@$server \'uptime\''
+                sh 'cat file.txt'
             }
         }
     }
