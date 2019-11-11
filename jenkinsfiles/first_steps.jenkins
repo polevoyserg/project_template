@@ -23,7 +23,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                    sh 'cat [server] > file.txt'
+                    sh 'echo [server] > file.txt'
                     sh 'echo $server >> file.txt'
   sh 'echo $username >> file.txt'
   sh 'echo $build_directory >> file.txt'
