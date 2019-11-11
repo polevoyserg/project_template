@@ -2,7 +2,7 @@
 // Check ub1 properties
 environment {
         
-        servers = '$server'
+        server = '$server'
         username ='$username'
         build_directory = '$build_directory'
         git_name = '$git_name'
@@ -25,7 +25,7 @@ pipeline {
         stage("First step") {
             steps {
                     sh 'echo [servers] > file.txt'
-                    sh 'echo $servers >> file.txt'
+                    sh 'echo $server >> file.txt'
                     sh 'echo >> file.txt'
                     sh 'echo [servers:vars] >> file.txt'
   sh 'echo username=$username >> file.txt'
