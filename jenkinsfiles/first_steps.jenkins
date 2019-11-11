@@ -8,10 +8,7 @@ pipeline {
         }
     
     environment {
-        packageName='my-package'
-        packageVersion=''
-        groupId='vznl'
-        nexus_endpoint='http://nexus.devtools.io'
+        
         server=$server
         nexus_password='J3nkins'
     }
@@ -24,7 +21,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'echo $server5'
+                sh 'echo $server ; echo $nexus_password' 
             }
         }
         stage("Second step") {
