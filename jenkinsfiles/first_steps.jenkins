@@ -6,6 +6,9 @@ pipeline {
     agent { 
         label 'master'
         }
+    environment {
+        host = '$server'
+    }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -13,7 +16,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh root@127.0.0.1 \'cd /ansible; ansible-playbook playbooks/new_centos_servers.yml\''
+                sh 'echo $server; echo $host'
             }
         }
         stage("Second step") {
