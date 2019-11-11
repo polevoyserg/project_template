@@ -23,7 +23,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                    sh '{echo $server ; echo $username ; echo $git_email} > file.txt'
+                    sh '{ echo $server ; echo $username ; echo $git_email } > file.txt'
                   }
         }
         stage("Second step") {
