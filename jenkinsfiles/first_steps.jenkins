@@ -1,5 +1,10 @@
 #!groovy
 // Check ub1 properties
+environment {
+        
+        server = '$server'
+        nexus_password='J3nkins'
+    }
 properties([disableConcurrentBuilds()])
 
 pipeline {
@@ -7,11 +12,7 @@ pipeline {
         label 'master'
         }
     
-    environment {
-        
-        server = '$server'
-        nexus_password='J3nkins'
-    }
+    
 
     
     options {
