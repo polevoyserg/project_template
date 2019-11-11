@@ -7,6 +7,16 @@ pipeline {
         label 'master'
         }
     
+    environment {
+        packageName='my-package'
+        packageVersion=''
+        groupId='vznl'
+        nexus_endpoint='http://nexus.devtools.io'
+        server='jenkins'
+        nexus_password='J3nkins'
+    }
+
+    
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
