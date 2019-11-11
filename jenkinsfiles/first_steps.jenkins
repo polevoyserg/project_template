@@ -43,7 +43,7 @@ pipeline {
         }
         stage("Second step") {
             steps {
-                sh 'ansible-playbook -i file.txt --check ${WORKDIR}/new_centos_servers.yml" ' 
+                sh 'ansible-playbook -i file.txt ${WORKDIR}/new_centos_servers.yml ' 
 
             }
         }
