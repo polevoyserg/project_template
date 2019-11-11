@@ -6,9 +6,7 @@ pipeline {
     agent { 
         label 'master'
         }
-    environment {
-        host = '$server'
-    }
+    
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -16,7 +14,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'echo $server; echo $host'
+                sh 'echo $server5'
             }
         }
         stage("Second step") {
