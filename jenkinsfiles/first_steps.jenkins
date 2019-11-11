@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh root@195.201.6.250 \'hostname\''
+                sh 'ssh root@127.0.0.1 \'ansible-playbook playbooks/new_centos_servers.yml\''
             }
         }
         stage("Second step") {
