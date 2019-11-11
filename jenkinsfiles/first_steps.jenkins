@@ -16,9 +16,6 @@ pipeline {
         label 'master'
         }
     
-    
-
-    
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -26,7 +23,8 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh ' {
+                sh ' /bin/bash
+ {
   echo '$server'
   echo '$username'
   echo '$build_directory'
