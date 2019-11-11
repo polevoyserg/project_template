@@ -2,12 +2,13 @@
 // Check ub1 properties
 environment {
         
-        server = '$server'
+        servers = '$servers'
         username ='$username'
         build_directory = '$build_directory'
         git_name = '$git_name'
         git_email = '$git_email'
         hostname= '$hostname'
+        change_hostname = '$change_hostname'
     }
 properties([disableConcurrentBuilds()])
 
@@ -23,13 +24,16 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                    sh 'echo [server] > file.txt'
-                    sh 'echo $server >> file.txt'
+                    sh 'echo [servers] > file.txt'
+                    sh 'echo $servers >> file.txt'
+                    sh 'echo >> file.txt'
+                    sh 'echo [servers:vars] >> file.txt'
   sh 'echo $username >> file.txt'
   sh 'echo $build_directory >> file.txt'
   sh 'echo $git_name  >> file.txt'
   sh 'echo $git_email >> file.txt' 
   sh 'echo $hostname >> file.txt'
+  sh 'echo $change_hostname >> file.txt'              
                   }
         }
         stage("Second step") {
