@@ -28,11 +28,12 @@ pipeline {
                     sh 'echo $servers >> file.txt'
                     sh 'echo >> file.txt'
                     sh 'echo [servers:vars] >> file.txt'
-  sh 'echo $username >> file.txt'
-  sh 'echo $build_directory >> file.txt'
-  sh 'echo $git_name  >> file.txt'
-  sh 'echo $git_email >> file.txt' 
-  sh 'echo $hostname=$change_hostname >> file.txt'          
+  sh 'echo username=$username >> file.txt'
+  sh 'echo build_directory=$build_directory >> file.txt'
+  sh 'echo git_name=$git_name  >> file.txt'
+  sh 'echo git_email=$git_email >> file.txt' 
+  sh 'echo hostname=$hostname >> file.txt' 
+  sh 'echo change_hostname=$change_hostname'
                   }
         }
         stage("Second step") {
