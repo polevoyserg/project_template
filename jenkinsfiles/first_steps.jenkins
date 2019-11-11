@@ -12,7 +12,7 @@ pipeline {
         packageVersion=''
         groupId='vznl'
         nexus_endpoint='http://nexus.devtools.io'
-        server='jenkins'
+        server=$server
         nexus_password='J3nkins'
     }
 
