@@ -38,7 +38,7 @@ pipeline {
         }
         stage("Second step") {
             steps {
-                sh 'cat file.txt'
+                sh 'ansible-playbook -i file.txt'
             }
         }
     }
