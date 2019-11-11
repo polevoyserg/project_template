@@ -23,16 +23,13 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh ' /bin/bash
- {
-  echo '$server'
-  echo '$username'
-  echo '$build_directory'
-  echo '$git_name'  
-  echo '$git_email'
-  echo '$hostname'
-                    
-} > file.txt        
+  echo '$server' > file.txt 
+  echo '$username' >> file.txt
+  echo '$build_directory' >> file.txt
+  echo '$git_name'  >> file.txt
+  echo '$git_email' >> file.txt
+  echo '$hostname' >> file.txt
+       
             }
         }
         stage("Second step") {
