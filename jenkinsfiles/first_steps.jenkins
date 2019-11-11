@@ -3,7 +3,11 @@
 environment {
         
         server = '$server'
-        nexus_password='$nexus_password'
+        username ='$jenkins'
+        build_directory = '$build_directory'
+        git_name = '$git_name'
+        git_email = '$git_email'
+        hostname= '$hostname'
     }
 properties([disableConcurrentBuilds()])
 
@@ -22,7 +26,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'echo $server ; echo $nexus_password' 
+                sh 'echo $server ; echo $username; echo $build_directory ; echo $git_name; echo $git_email; echo $hostname  ' 
             }
         }
         stage("Second step") {
