@@ -23,9 +23,8 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-  sh 'echo '$server' > file.txt' 
-  sh 'echo '$username' >> file.txt'
-      
+  sh 'echo $server > file.txt' 
+  
             }
         }
         stage("Second step") {
