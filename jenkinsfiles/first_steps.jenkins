@@ -1,5 +1,9 @@
 #!groovy
 // Check ub1 properties
+node {  
+        WORKDIR='workspace/ansible/playbooks/'
+}
+
 environment {
         
         server = '$server'
@@ -10,6 +14,7 @@ environment {
         hostname= '$hostname'
         change_hostname = '$change_hostname'
     }
+
 properties([disableConcurrentBuilds()])
 
 pipeline {
@@ -38,7 +43,8 @@ pipeline {
         }
         stage("Second step") {
             steps {
-                sh 'ansible-playbook -i file.txt'
+                sh 'ansible-playbook -i file.txt --check ${WORKDIR}/new_centos_servers.yml" ' 
+
             }
         }
     }
